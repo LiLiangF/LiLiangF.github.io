@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "HELLO !"
+title                    : "Liangfeng Li 李梁锋"
 title_separator          : "-"
 name                     : &name "Your Name"
 description              : &description "personal description"
@@ -25,7 +25,7 @@ author:
   avatar           : "profile.png"
   name             : "Liangfeng Li"
   pronouns         : # example: "she/her"  
-  bio              : "Work Hard and Live Well."
+  bio              : "Work Hard and Live Well"
   location         : "China"
   employer         : "Institute of Software, CAS"
   uri              : # URL
@@ -52,7 +52,7 @@ author:
 
   # Social media
   artstation       : # Username
-  bluesky          : "bsky.app" # Replace this with you Bluesky username
+  bluesky          : # "bsky.app" # Replace this with you Bluesky username
   facebook         : # Username
   flickr           : # Username
   foursquare       : # Username
