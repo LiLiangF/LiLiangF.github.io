@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "Liangfeng Li 李梁锋"
+title                    : "kawaii's site"
 title_separator          : "-"
 name                     : &name "Your Name"
 description              : &description "personal description"
