@@ -10,6 +10,16 @@ Edit `index.html` to replace `Your Name`, the bio, social URLs, work entries, an
 
 Open `index.html` directly in a browser, or serve the folder with any static-file server.
 
+## Chinese CV
+
+`resume/Liangfeng-Li-CV-CN.tex` is the editable Chinese CV source. It is compiled with XeLaTeX and the published PDF is `resume/Liangfeng-Li-CV-CN.pdf`; the **Chinese CV** pill beside the profile links opens it in a new tab.
+
+```bash
+xelatex -interaction=nonstopmode -halt-on-error -output-directory=resume resume/Liangfeng-Li-CV-CN.tex
+```
+
+Before sharing a revised version, replace `your.email@example.com`, `电话：请填写`, and the Skills placeholder in the `.tex` source, then compile twice so PDF links and metadata are refreshed.
+
 ## Deploy to GitHub Pages
 
 1. Create a GitHub repository and push this folder's contents to its `main` branch.
