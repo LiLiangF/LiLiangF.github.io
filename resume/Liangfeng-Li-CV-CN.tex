@@ -1,81 +1,109 @@
 % !TEX program = xelatex
-% 单栏学术简历：个人信息 → 教育经历 → 论文发表 → 项目/科研经历 → 竞赛与荣誉 → 技能
-\documentclass[10.5pt,a4paper]{article}
+% 中文学术简历，版式参考用户提供的 Word 简历。
+\documentclass[10pt,a4paper]{article}
 
-\usepackage[margin=1.6cm]{geometry}
+\usepackage[margin=1.45cm]{geometry}
 \usepackage[fontset=none]{ctex}
+\usepackage{fontspec}
+\usepackage{graphicx}
 \usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{xcolor}
 \usepackage{titlesec}
 \usepackage{tabularx}
 \usepackage{array}
-\usepackage{fontspec}
 \usepackage{microtype}
 \pagestyle{empty}
 
-% 使用 TeX Live 自带字体，保证 macOS、Linux 和 CI 下的稳定输出。
-\IfFileExists{/usr/local/texlive/2026/texmf-dist/fonts/opentype/public/fandol/FandolSong-Regular.otf}{%
-  \setCJKmainfont[Path=/usr/local/texlive/2026/texmf-dist/fonts/opentype/public/fandol/]{FandolSong-Regular.otf}%
-  \setCJKsansfont[Path=/usr/local/texlive/2026/texmf-dist/fonts/opentype/public/fandol/]{FandolHei-Regular.otf}%
-}{%
-  \setCJKmainfont{FandolSong-Regular}%
-  \setCJKsansfont{FandolHei-Regular}%
-}
+% 使用 macOS 原生宋体，避免 Fandol 字体在本地阅读器中的兼容性问题。
+\setmainfont{Times New Roman}
+\setCJKmainfont{Songti SC}
+\setCJKsansfont{Songti SC}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
-\definecolor{accent}{HTML}{4F146D}
-\definecolor{ink}{HTML}{252525}
-\definecolor{muted}{HTML}{666666}
-\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent, pdfborder={0 0 0}}
-\setlist[itemize]{leftmargin=1.25em, itemsep=2pt, topsep=2pt, parsep=0pt}
-\titleformat{\section}{\large\bfseries\color{accent}}{}{0pt}{}[\vspace{2pt}\color{accent!55}\titlerule]
-\titlespacing*{\section}{0pt}{12pt}{5pt}
-\newcommand{\cvitem}[4]{%
-  \begin{tabularx}{\textwidth}{@{}p{2.25cm}Xr@{}}
-    \textcolor{muted}{#1} & \textbf{#2} & \textcolor{muted}{#3} \\
+\definecolor{ink}{HTML}{151515}
+\definecolor{muted}{HTML}{555555}
+\hypersetup{colorlinks=true, urlcolor=ink, linkcolor=ink, pdfborder={0 0 0}}
+\setlist[itemize]{leftmargin=1.3em, label=\textbullet, itemsep=2pt, topsep=2pt, parsep=0pt}
+\titleformat{\section}{\large\bfseries\color{ink}}{}{0pt}{}[\vspace{2pt}\color{ink}\titlerule]
+\titlespacing*{\section}{0pt}{11pt}{5pt}
+\newcommand{\eduitem}[4]{%
+  \begin{tabularx}{\textwidth}{@{}p{3.05cm}Xr@{}}
+    #1 & \textbf{#2} & #3 \\
     & \textcolor{muted}{#4} &
   \end{tabularx}\vspace{4pt}
 }
-\newcommand{\publication}[4]{%
-  \textbf{#1}\par
-  \vspace{1pt}\textcolor{muted}{#2}\par
-  \vspace{1pt}\textit{#3}\hfill #4\par
+\newcommand{\projecttitle}[2]{%
+  \vspace{2pt}\textbf{#1}\hfill\textbf{#2}\par\vspace{1pt}
 }
+\newcommand{\labeltext}[1]{\textbf{#1}}
 
 \begin{document}
 \color{ink}
 
-{\fontsize{27}{32}\selectfont\bfseries Liangfeng Li}\hfill
-{\large\color{accent}个人简历}\par
-\vspace{4pt}
-\small
-\href{mailto:your.email@example.com}{your.email@example.com}\quad | \quad
-电话：请填写\quad | \quad
-\href{https://github.com/LiLiangF}{github.com/LiLiangF}\quad | \quad
-\href{https://liliangf.github.io}{liliangf.github.io}
+\begin{minipage}[t]{0.78\textwidth}
+  \vspace{0pt}
+  {\fontsize{25}{29}\selectfont\bfseries Liangfeng Li}\par
+  \vspace{5pt}
+  \small
+  出生年月：2003.07\quad | \quad
+  电话：18267797387\quad | \quad
+  \href{mailto:1309487009@qq.com}{1309487009@qq.com}\par
+  \vspace{2pt}
+  \href{https://github.com/LiLiangF}{github.com/LiLiangF}\quad | \quad
+  \href{https://liliangf.github.io}{liliangf.github.io}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.18\textwidth}
+  \vspace{-2pt}\hfill\includegraphics[width=2.25cm,height=3.15cm]{assets/avatar.jpg}
+\end{minipage}
 
 \section{个人信息}
-中国科学院大学计算机技术专业硕士研究生。研究兴趣包括操作系统、AI 系统与软硬件协同设计。
+中国科学院大学计算机技术专业硕士研究生。研究兴趣包括操作系统、AI 系统、LLM 应用与软硬件协同设计。
 
 \section{教育经历}
-\cvitem{2025 -- 2028}{中国科学院大学}{北京，中国}{计算机技术专业硕士研究生}
-\cvitem{2021 -- 2025}{杭州电子科技大学}{杭州，中国}{计算机科学与技术专业工学学士}
+\eduitem{\mbox{2025.09 -- 2028.06}}{中国科学院大学}{北京，中国}{计算机技术专业硕士研究生}
+\eduitem{\mbox{2021.09 -- 2025.06}}{杭州电子科技大学}{杭州，中国}{计算机科学与技术专业工学学士}
 
 \section{论文发表}
-\publication{QiMeng-PerceptOS: Semantic-Aware Kernel Optimization for OS-Intensive Workloads via Hardware-Software Alignment}{Huilai Chen, Yuanbo Wen, \textbf{Liangfeng Li}, Shaohui Peng, Jingzhe Zhu, Jun Bi, Xuzhi Zhang, Qi Guo, Ling Li, Yunji Chen.}{Proceedings of the 43rd International Conference on Machine Learning (ICML 2026).}{\href{https://openreview.net/forum?id=aKN6UpjSnc}{Paper}\quad \href{https://github.com/xuewuyinhe/QiMeng-PerceptOS}{Code}\quad \href{https://xuewuyinhe.github.io/QiMeng-PerceptOS/}{Project}}
+\textbf{QiMeng-PerceptOS: Semantic-Aware Kernel Optimization for OS-Intensive Workloads via Hardware-Software Alignment}\par
+\vspace{1pt}
+\textcolor{muted}{Huilai Chen, Yuanbo Wen, \textbf{Liangfeng Li}, Shaohui Peng, Jingzhe Zhu, Jun Bi, Xuzhi Zhang, Qi Guo, Ling Li, Yunji Chen.}\par
+\vspace{1pt}
+\textit{Proceedings of the 43rd International Conference on Machine Learning (ICML 2026).}\hfill
+\href{https://openreview.net/forum?id=aKN6UpjSnc}{Paper}\quad
+\href{https://github.com/xuewuyinhe/QiMeng-PerceptOS}{Code}\quad
+\href{https://xuewuyinhe.github.io/QiMeng-PerceptOS/}{Project}
 
 \section{项目 / 科研经历}
-\cvitem{2025 -- 至今}{QiMeng-PerceptOS}{操作系统与 AI 系统研究}{围绕 OS-intensive workloads，开展语义感知的内核优化与软硬件协同设计研究；成果发表于 ICML 2026。}
+\projecttitle{基于特定应用的操作系统内核优化多 Agent 系统研究}{2025.11 -- 2026.02}
+\begin{itemize}
+  \item \labeltext{问题背景：}面向特定应用的内核配置优化存在语义对齐缺失、配置空间庞大与评估成本高等挑战。
+  \item \labeltext{研究内容：}设计由感知、搜索与增强模块协同的框架，以硬件-软件语义指纹对齐实现应用感知的自动化内核调优；在 Redis、Apache、AES、PostgreSQL 与 RAG 等五类负载上验证，相对 AutoOS、Vanilla LLM 等基线的吞吐量提升为 15.6\%--194.5\%。
+  \item 利用双层次归纳搜索与全局语义摘要模板，结合硬件拓扑、调用栈语义和配置依赖进行层次化剪枝与引导；在 Fedora、Ubuntu 多平台上实现 Apache 吞吐量提升至 323.5\%、PostgreSQL 提升至 164.9\%。
+\end{itemize}
+
+\projecttitle{基于临床医疗器械使用手册的智能问答系统}{2025.10 -- 2025.12}
+\begin{itemize}
+  \item \labeltext{数据与检索：}使用 PyMuPDF、PaddleOCR 解析 200+ 份手册；以语义感知切分和父子文档组织文本块，将表格以 Markdown 保存，并在 MongoDB 中维护文本、页码与插图元数据。采用 Qwen3-Embedding、BGE-M3 和 BM25 多路召回，结合 Milvus、RRF 与 BGE-Reranker 完成检索与重排。
+  \item \labeltext{模型与部署：}以 Qwen3-Reranker-8B 构建 Pointwise 数据并蒸馏 BGE-Reranker-0.6B，召回率提升 3\%；基于 QA 对构建 SFT 数据并微调 Qwen3-8B，问答准确率达到 90\%+。通过 AWQ INT4 与 vLLM 实现 8 卡 A100 部署，首字延迟降低 55\%，吞吐率达到 600+ tokens/s。
+\end{itemize}
+
+\newpage
+\projecttitle{面向网约车司机的智能语音对话系统}{2025.09 -- 2025.11}
+\begin{itemize}
+  \item \labeltext{系统设计：}融合 LLM、微调、Agent 与 MCP，提供订单管理、行程导航、乘客沟通等服务；以 DeepSeek-V3.1 + Prompt 对订单管理、导航、信息查询与闲聊四类意图仲裁，并以微调 BERT-Tiny 进行拒识。
+  \item \labeltext{意图与任务执行：}构建 40w+ 意图标注语料并微调 BERT-Large，Top-5 召回准确率达 98\%、QPS 300+；第二层模型实现意图识别与槽位抽取。通过 MCP 接入订单、导航、即时通讯 API 与实时数据源；支持五轮对话，准确率达到 92\%。
+\end{itemize}
 
 \section{竞赛与荣誉}
 \begin{itemize}
-  \item \textbf{中国科学院大学三好学生}
-  \item \textbf{全国大学生系统能力大赛操作系统设计赛国家级一等奖}，负责人（Computer System Development Capability Competition -- Operating System Design Competition）
+  \item 中国科学院大学三好学生
+  \item 全国大学生计算机系统能力大赛 - 操作系统设计赛全国一等奖（负责人）\\
+  \textcolor{muted}{Computer System Development Capability Competition -- Operating System Design Competition}
 \end{itemize}
 
 \section{技能}
-\textbf{研究方向：} 操作系统、AI 系统、软硬件协同设计\par
-\textbf{技术栈：} 请填写，例如 C/C++、Python、Linux、Git、Docker
+\textbf{编程与系统：}Python、Linux、Git、Docker、C/C++\par
+\textbf{大模型与 AI：}PyTorch、BERT、GPT、Transformer、PPO/GRPO、RAG、Agent、LangChain、SFT
 
 \end{document}
