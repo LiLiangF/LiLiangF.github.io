@@ -1,7 +1,7 @@
 :root { --ink: #252525; --muted: #737373; --line: #e5e5e5; --accent: #4f146d; --accent-soft: #75498a; }
 * { box-sizing: border-box; }
 html { background: #fff; }
-body { margin: 0; color: var(--ink); background: #fff; font-family: "Inter", Arial, sans-serif; font-optical-sizing: auto; }
+body { margin: 0; color: var(--ink); background: #fff; font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif; }
 .site-shell { width: 100%; margin: 0 auto; padding: 58px 0 0; }
 .profile { display: grid; grid-template-columns: 164px minmax(0, 1fr); column-gap: 48px; align-items: start; width: min(100% - 48px, 760px); margin: 0 auto; padding: 0 0 52px; }
 .profile-aside { display: flex; flex-direction: column; align-items: center; }
@@ -37,10 +37,10 @@ body { margin: 0; color: var(--ink); background: #fff; font-family: "Inter", Ari
 .empty-state .empty-title { margin: 0 0 5px; color: var(--ink); font-size: 15px; font-weight: 600; }
 .timeline-list { display: grid; gap: 0; border-top: 1px solid var(--line); }
 .timeline-item { display: grid; grid-template-columns: 138px minmax(0, 1fr); gap: 22px; padding: 18px 0; border-bottom: 1px solid var(--line); }
-.timeline-date { padding-top: 3px; color: var(--accent); font-size: 11px; font-weight: 700; letter-spacing: .05em; }
+.timeline-date { padding-top: 3px; color: var(--accent); font-family: "Roboto Mono", monospace; font-size: 10px; font-weight: 400; letter-spacing: .035em; }
 .timeline-item h3 { margin: 0 0 4px; font-size: 15px; letter-spacing: -.015em; }
 .timeline-item p, .honor-item p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
 .honors-list { display: grid; gap: 0; border-top: 1px solid #dfdae3; }
 .honor-item { display: grid; grid-template-columns: 138px minmax(0, 1fr); gap: 22px; padding: 16px 0; border-bottom: 1px solid #dfdae3; }
-.honor-item span { color: var(--accent); font-size: 11px; font-weight: 700; letter-spacing: .05em; }
+.honor-item span { color: var(--accent); font-family: "Roboto Mono", monospace; font-size: 10px; font-weight: 400; letter-spacing: .035em; }
 @media (max-width: 620px) { .site-shell { padding-top: 40px; } .profile, .content-section { width: min(100% - 32px, 760px); } .profile { grid-template-columns: 1fr; justify-items: center; gap: 21px; padding-bottom: 36px; text-align: center; } .avatar-placeholder { width: 132px; height: 132px; } .profile-copy { padding-top: 0; } .profile-copy h1 { font-size: 29px; } .profile-copy p { font-size: 14px; } .social-links { margin-top: 13px; } .content-band { padding: 34px 0 37px; } .content-section h2 { margin-bottom: 18px; font-size: 23px; } .work-card { padding: 16px; } .timeline-item, .honor-item { grid-template-columns: 1fr; gap: 5px; padding: 15px 0; } }
