@@ -1,0 +1,37 @@
+:root { --ink: #121722; --muted: #555b67; --line: #dfe0e5; --accent: #5d22a3; --accent-soft: #6e35b5; }
+* { box-sizing: border-box; }
+html { background: #fff; }
+body { margin: 0; color: var(--ink); background: #fff; font-family: "Inter", Arial, sans-serif; font-optical-sizing: auto; }
+.site-shell { width: min(100% - 48px, 1100px); margin: 0 auto; padding: 70px 0 54px; }
+.profile { display: grid; grid-template-columns: 176px minmax(0, 1fr); column-gap: 32px; align-items: center; max-width: 720px; margin: 0 auto; padding: 0 10px 28px; border-bottom: 1px solid #d8d9dd; }
+.avatar-placeholder { width: 156px; height: 156px; border: 2px dashed #9ca0a8; border-radius: 50%; display: grid; place-items: center; color: #7b8089; background: #fcfcfd; }
+.avatar-placeholder svg { width: 52px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.profile-copy h1 { margin: 0 0 14px; letter-spacing: -0.055em; font-size: clamp(2.25rem, 5vw, 3.2rem); line-height: .96; font-weight: 700; }
+.profile-copy p { max-width: 530px; margin: 0; color: #363b45; font-size: 15px; line-height: 1.75; }
+.social-links { grid-column: 1 / -1; display: flex; gap: 18px; margin-top: 12px; align-items: center; }
+.social-links a { color: #242a34; display: grid; place-items: center; width: 20px; height: 20px; text-decoration: none; transition: color .16s ease, transform .16s ease; }
+.social-links a:hover { color: var(--accent); transform: translateY(-1px); }
+.social-links svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.social-links a[aria-label="GitHub"] svg { fill: currentColor; stroke: none; }
+.scholar { font-size: 17px; font-weight: 700; font-family: Georgia, serif; }
+.orcid { border-radius: 50%; background: currentColor; color: #fff; font-weight: 700; font-size: 9px; padding: 3px 2px; letter-spacing: -.04em; }
+.work { width: min(100%, 720px); margin: 26px auto 0; }
+.work h2 { margin: 0 0 13px; text-align: left; font-size: 25px; line-height: 1.2; letter-spacing: -.04em; }
+.filters { display: flex; gap: 28px; margin-bottom: 11px; border-bottom: 1px solid #d9dadd; }
+.filter { position: relative; padding: 0 10px 10px; border: 0; background: transparent; color: #292f39; font: inherit; font-size: 15px; cursor: pointer; }
+.filter::after { content: ""; position: absolute; left: 10px; right: 10px; bottom: -1px; height: 2px; background: transparent; }
+.filter:hover, .filter.is-active { color: var(--accent); }
+.filter.is-active::after { background: var(--accent); }
+.work-list { display: grid; gap: 12px; }
+.work-card { padding: 17px 19px 15px; border: 1px solid #d7d9de; border-radius: 8px; background: #fff; transition: border-color .16s ease, box-shadow .16s ease; }
+.work-card:hover { border-color: #b9a3d5; box-shadow: 0 3px 13px rgba(24, 18, 36, .05); }
+.work-card[hidden] { display: none; }
+.work-card h3 { margin: 0 0 7px; font-size: 17px; line-height: 1.35; letter-spacing: -.025em; font-weight: 700; }
+.work-card p { margin: 0; }
+.authors, .venue { color: var(--muted); font-size: 13px; line-height: 1.55; }
+.authors strong { color: #202631; font-weight: 700; }
+.venue { margin-top: 3px !important; }
+.card-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 11px !important; }
+.card-links a { color: var(--accent); border: 1px solid var(--accent-soft); border-radius: 3px; padding: 3px 9px; font-size: 12px; font-weight: 600; line-height: 1.2; text-decoration: none; }
+.card-links a:hover { color: #fff; background: var(--accent); }
+@media (max-width: 620px) { .site-shell { width: min(100% - 32px, 720px); padding-top: 40px; } .profile { grid-template-columns: 1fr; justify-items: center; gap: 22px; padding: 0 0 25px; text-align: center; } .avatar-placeholder { width: 132px; height: 132px; } .profile-copy p { font-size: 14px; } .social-links { grid-column: 1; margin-top: -5px; justify-content: center; } .work { margin-top: 24px; } .work h2 { font-size: 23px; } .filters { gap: 10px; justify-content: space-between; } .filter { padding-inline: 8px; } .work-card { padding: 16px; } .work-card h3 { font-size: 16px; } .authors, .venue { font-size: 12px; } }
